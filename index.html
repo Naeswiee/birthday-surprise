@@ -1,1 +1,177 @@
-Birthday surprise
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- 1. INTRO -->
+<section class="screen active" id="intro">
+  <h1 class="script-title">Happy Birthday!</h1>
+  <div class="env-wrap" id="introEnv" role="button" aria-label="Open the envelope">
+    <svg viewBox="0 0 300 200">
+      <defs>
+        <radialGradient id="gold" cx="40%" cy="35%"><stop offset="0" stop-color="#f6dc8b"/><stop offset=".6" stop-color="#d4a23a"/><stop offset="1" stop-color="#a87618"/></radialGradient>
+      </defs>
+      <rect x="0" y="0" width="300" height="200" rx="6" fill="#b5121b"/>
+      <path d="M0 200 L150 100 L300 200" fill="#a40f18"/>
+      <path d="M0 0 L120 120 M300 0 L180 120" stroke="#9a0d16" stroke-width="1"/>
+      <g class="env-flap"><path d="M0 0 L150 112 L300 0 Z" fill="#c41922"/><path d="M0 0 L150 112 L300 0" fill="none" stroke="#9a0d16" stroke-width="1.2"/></g>
+      <g class="seal">
+        <path d="M150 80 q14 -2 22 8 q10 8 6 22 q2 14 -10 20 q-10 8 -22 4 q-14 2 -20 -10 q-8 -10 -2 -22 q2 -14 14 -18 q6 -4 12 -4z" fill="url(#gold)"/>
+        <circle cx="150" cy="108" r="17" fill="none" stroke="#b6862a" stroke-width="2"/>
+        <text x="150" y="115" text-anchor="middle" font-family="Great Vibes" font-size="20" fill="#9a6e1a">♡</text>
+      </g>
+    </svg>
+  </div>
+  <p class="hint">Click the envelope</p>
+  <div class="doodle gift float" data-doodle="gift" data-color="#5a4038"></div>
+  <div class="doodle balloons float" data-doodle="balloons" data-color="#5a4038"></div>
+</section>
+
+<!-- 2. HERO -->
+<section class="screen" id="hero">
+  <div class="bg" id="heroBg"></div>
+  <div class="tint"></div>
+  <div class="content reveal">
+    <div class="date" id="heroDate"></div>
+    <h1 class="script-title" id="heroTitle"></h1>
+    <p class="sub" id="heroSub"></p>
+    <div><button class="link-btn" data-go="gifts" style="margin-top:clamp(30px,8vh,80px)">Click here</button></div>
+  </div>
+  <div class="doodle gift float" data-doodle="gift" data-color="#fff"></div>
+  <div class="doodle balloons float" data-doodle="balloons" data-color="#fff"></div>
+</section>
+
+<!-- 3. GIFTS -->
+<section class="screen red-bg" id="gifts">
+  <h2 class="script-title">These are for you</h2>
+  <div class="gift-row">
+    <button class="gift-item" data-go="message">
+      <svg viewBox="0 0 200 140">
+        <rect x="6" y="10" width="188" height="120" rx="6" fill="#f7f4f0"/>
+        <path d="M6 130 L100 70 L194 130" fill="#ebe6df"/>
+        <path d="M6 10 L100 82 L194 10 Z" fill="#fffdf9" stroke="#ddd5cb"/>
+        <circle cx="100" cy="80" r="15" fill="#c8141e"/><circle cx="100" cy="80" r="9" fill="none" stroke="#9a0d16" stroke-width="2"/>
+      </svg>
+      <span>Message</span>
+    </button>
+    <button class="gift-item" data-go="flower">
+      <svg viewBox="0 0 200 220" data-mini-bouquet></svg>
+      <span>Flower</span>
+    </button>
+    <button class="gift-item" data-go="cake">
+      <svg viewBox="0 0 220 170">
+        <defs><clipPath id="sliceFront"><polygon points="14,92 196,58 196,150 14,162"/></clipPath></defs>
+        <polygon points="196,58 222,72 222,158 196,150" fill="#a4141c"/>
+        <polygon points="196,58 222,72 222,158 196,150" fill="#fff" opacity=".12"/>
+        <g clip-path="url(#sliceFront)">
+          <rect x="0" y="40" width="220" height="140" fill="#c4161f"/>
+          <polygon points="0,112 220,76 220,86 0,122" fill="#fff6ec"/>
+          <polygon points="0,140 220,104 220,114 0,150" fill="#fff6ec"/>
+        </g>
+        <polygon points="14,92 196,58 222,72 40,104" fill="#fffaf2"/>
+        <path d="M14 92 Q30 100 40 104" fill="none" stroke="#f0e6d8" stroke-width="3"/>
+        <g transform="translate(176,34)">
+          <path d="M0 22 C-14 10 -10 -6 2 -4 C14 -6 18 10 0 22z" fill="#d81f2a"/>
+          <path d="M-6 -4 L2 -10 L10 -4 L2 -2z" fill="#3e8e3a"/>
+          <circle cx="-2" cy="4" r="1.2" fill="#ffd"/><circle cx="5" cy="8" r="1.2" fill="#ffd"/><circle cx="0" cy="12" r="1.2" fill="#ffd"/>
+        </g>
+        <g fill="#fff" opacity=".9"><circle cx="60" cy="90" r="5"/><circle cx="100" cy="82" r="5"/><circle cx="140" cy="75" r="5"/></g>
+      </svg>
+      <span>Cake</span>
+    </button>
+  </div>
+</section>
+
+<!-- 4. MESSAGE (polaroids + envelope) -->
+<section class="screen" id="message">
+  <div class="bg" id="msgBg"></div>
+  <div class="tint"></div>
+  <div class="polaroid p1"><div class="ph" data-photo="polaroids.0"></div></div>
+  <div class="polaroid p2"><div class="ph" data-photo="polaroids.1"></div></div>
+  <div class="polaroid p3"><div class="ph" data-photo="polaroids.2"></div></div>
+  <div class="polaroid p4"><div class="ph" data-photo="polaroids.3"></div></div>
+  <div class="doodle balloons" data-doodle="balloons" data-color="#fff"></div>
+  <div class="msg-env" data-go="letter" role="button" aria-label="Open the letter">
+    <div class="stack">
+      <div class="back"></div>
+      <div class="lace"><div class="lace-inner">
+        <h4>Click to view</h4>
+        <p id="letterPreview"></p>
+      </div></div>
+      <div class="front"><svg viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 0 L200 90 L400 0 L400 160 L0 160Z" fill="#c4161f"/><path d="M0 0 L200 90 L400 0" fill="none" stroke="#8e0c14" stroke-width="2"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. LETTER -->
+<section class="screen red-bg" id="letter">
+  <div class="letter-wrap">
+    <article class="letter" id="letterBody"></article>
+    <div class="strip" id="letterStrip"></div>
+  </div>
+  <div class="doodle heart" data-doodle="heart" data-color="#fff"></div>
+  <div class="doodle gift float" data-doodle="gift" data-color="#fff"></div>
+  <div class="doodle balloons float" data-doodle="balloons" data-color="#fff"></div>
+  <button class="link-btn bottom-link" data-go="gifts">Click here</button>
+</section>
+
+<!-- 6. FLOWER -->
+<section class="screen red-bg" id="flower">
+  <div class="flower-layout">
+    <div class="notes left" id="notesLeft"></div>
+    <div class="bouquet">
+      <svg viewBox="0 0 300 380" id="bigBouquet"></svg>
+      <h3 class="script-title" id="flowerName"></h3>
+      <small id="flowerCaption"></small>
+    </div>
+    <div class="notes right" id="notesRight"></div>
+  </div>
+  <button class="link-btn bottom-link" data-go="gifts">Click here</button>
+</section>
+
+<!-- 7. CAKE / SCRAPBOOK -->
+<section class="screen red-bg" id="cake">
+  <div class="scrap">
+    <div class="gingham scrap-item" style="--r:-2deg"></div>
+    <div class="torn scrap-item" style="--r:4deg;animation-delay:.1s"></div>
+    <div class="scallop scrap-item" style="--r:-4deg;animation-delay:.2s"><div class="frame"><div class="ph" data-photo="scrapbook.mainPhoto"></div></div></div>
+    <svg class="ribbon-bow scrap-item" style="--r:-15deg;animation-delay:.5s" viewBox="0 0 60 40"><path d="M30 20 C14 2 2 6 4 18 C6 30 20 28 30 20 C40 28 54 30 56 18 C58 6 46 2 30 20Z" fill="#d42a33" stroke="#8e0c14"/><path d="M28 21 L18 40 M32 21 L42 40" stroke="#d42a33" stroke-width="4"/><circle cx="30" cy="20" r="4" fill="#8e0c14"/></svg>
+    <div class="clipped scrap-item" style="--r:-1deg;animation-delay:.3s">
+      <svg class="clip" viewBox="0 0 54 40"><rect x="4" y="16" width="46" height="18" rx="3" fill="#c4161f"/><path d="M14 16 C14 2 40 2 40 16" fill="none" stroke="#c4161f" stroke-width="5"/><rect x="4" y="16" width="46" height="5" fill="#a40f18"/></svg>
+      <div class="ph" data-photo="scrapbook.clippedPhoto"></div>
+    </div>
+    <div class="strip second scrap-item" style="--r:-3deg;animation-delay:.35s" data-strip="scrapbook.photoStrip" data-offset="2"></div>
+    <div class="strip scrap-item" style="--r:2deg;animation-delay:.4s" data-strip="scrapbook.photoStrip" data-offset="0"></div>
+    <div class="camera scrap-item" style="--r:-8deg;animation-delay:.45s"><div class="ph" data-photo="scrapbook.cameraPhoto"></div><i></i><i></i><i></i></div>
+    <div class="stitch scrap-item" style="animation-delay:.6s">×××××××××××</div>
+    <div class="record-btn scrap-item" style="animation-delay:.7s" data-go="song" role="button" aria-label="Listen to the song">
+      <svg viewBox="0 0 200 200" data-vinyl></svg>
+      <div class="lbl"><svg viewBox="0 0 200 200"><defs><path id="arc" d="M100 100 m-78 0 a78 78 0 1 1 156 0"/></defs>
+        <text font-family="Playfair Display" font-size="15" fill="#fff" letter-spacing="1"><textPath href="#arc" startOffset="50%" text-anchor="middle">Listen to music · CLICK ME</textPath></text></svg></div>
+    </div>
+  </div>
+  <button class="link-btn bottom-link" data-go="gifts">Click here</button>
+</section>
+
+<!-- 8. SONG -->
+<section class="screen red-bg" id="song">
+  <div class="big-vinyl"><svg viewBox="0 0 200 200" data-vinyl></svg></div>
+  <div class="song-panel">
+    <h2 class="script-title" id="songHeading"></h2>
+    <div class="player" id="player"></div>
+    <button class="link-btn" data-go="hero">Click here</button>
+  </div>
+  <div class="notes-anim"><span>♫</span><span>♪</span></div>
+</section>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
